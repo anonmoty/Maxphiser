@@ -33,8 +33,10 @@
  ██║╚██╔╝██║██╔══██║ ██╔██╗ ██╔═══╝ ██╔══██║██║╚════██║██╔══╝  ██╔══██╗
  ██║ ╚═╝ ██║██║  ██║██╔╝ ██╗██║     ██║  ██║██║███████║███████╗██║  ██║
  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
-```
 
+
+```
+<img width="692" height="996" alt="Image" src="https://github.com/user-attachments/assets/e6613a4e-be19-4065-8e33-c9aa99e9c6a2" />
 ### `[ ADVANCED PHISHING FRAMEWORK ]`
 ### `[ SYSTEM BREACH PROTOCOL INITIATED ]`
 
